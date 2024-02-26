@@ -1,5 +1,5 @@
-# gitHubDirectory=/scratch/ldelisle/Bolt2023_test
-gitHubDirectory=/n/projects/ah2717/Bolt2023_test
+# gitHubDirectory=/scratch/ldelisle/HintermannBoltEtAl2024
+gitHubDirectory=/n/projects/ah2717/HintermannBoltEtAl2024
 
 # This directory will contain all fastas and indexes
 # genomeDirectory=/scratch/ldelisle/HintermannBolt/genomes

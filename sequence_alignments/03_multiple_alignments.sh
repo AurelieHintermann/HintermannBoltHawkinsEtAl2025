@@ -1,6 +1,6 @@
 #!/bin/bash
 conda activate BoltEtAl2023
-cd /Users/Hintermann/Desktop/Bolt2023_test
+cd /Users/Hintermann/Desktop/HintermannBoltEtAl2024
 
 annotation_file=annotations/HoxD_Elements_mm39_colored_noStrand9col.bed
 

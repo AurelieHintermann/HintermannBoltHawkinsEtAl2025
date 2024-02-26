@@ -6,7 +6,7 @@ Clone the git repository
 
 ```bash
 cd /scratch/ldelisle/
-git clone git@gitlab.unige.ch:Aurelie.Hintermann/Bolt2023_test.git
+git clone git@gitlab.unige.ch:Aurelie.Hintermann/HintermannBoltEtAl2024.git
 ```
 
 Create dirs to be able to put fastqs
@@ -34,7 +34,7 @@ First modify what is in [filePaths.sh](./filePaths.sh)
 Then run outside of jobs the small scripts in prepare:
 
 ```bash
-cd /scratch/ldelisle/Bolt2023_test
+cd /scratch/ldelisle/HintermannBoltEtAl2024
 bash prepare/00_create_conda_env.sh
 bash prepare/01_get_fasta.sh
 bash prepare/02a_custom_annotations_mm39.sh

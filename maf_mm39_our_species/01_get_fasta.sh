@@ -1,7 +1,7 @@
 mkdir -p /scratch/ldelisle/maf
 cd /scratch/ldelisle/maf
-scriptDirectory=/scratch/ldelisle/Bolt2023_test/maf_mm39_our_species/scripts
-pathForTable=/scratch/ldelisle/Bolt2023_test/maf_mm39_our_species/genomes_chr_select.txt
+scriptDirectory=/scratch/ldelisle/HintermannBoltEtAl2024/maf_mm39_our_species/scripts
+pathForTable=/scratch/ldelisle/HintermannBoltEtAl2024/maf_mm39_our_species/genomes_chr_select.txt
 
 export PATH=$scriptDirectory:$PATH
 
