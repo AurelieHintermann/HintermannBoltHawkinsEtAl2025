@@ -1,0 +1,24 @@
+# Downloaded by the scripts:
+scripts/fromgtfTobed12.py
+scripts/fromMacs2BdgToSimplifiedBdgAndBw.sh
+scripts/in_silico_PCR.pl
+
+# Mac file:
+.DS_Store
+
+# R files
+.Rhistory
+
+# Big files from single-cell
+scRNAseq/*rds
+scRNAseq/data
+
+# Scripts from UCSC
+maf_mm39_our_species/scripts
+
+# gz uploaded to GEO
+RNAseq/outputs/AllCufflinks_Simplified.txt.gz
+
+# maf
+annotations/chr2.maf*
+annotations/mm39.galGal6.synNet.maf*

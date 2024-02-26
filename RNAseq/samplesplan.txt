@@ -1,0 +1,13 @@
+sample	genotype	stage	sex	tissue	replicate
+RNAseq_mm_E18_wt_FUGS_rep1	wt	E18	females	UGS	rep1
+RNAseq_mm_E18_wt_FUGS_rep2	wt	E18	females	UGS	rep2
+RNAseq_mm_E18_wt_FUGS_rep3	wt	E18	females	UGS	rep3
+RNAseq_mm_E18_wt_MUGS_rep1	wt	E18	males	UGS	rep1
+RNAseq_mm_E18_wt_MUGS_rep2	wt	E18	males	UGS	rep2
+RNAseq_mm_E18_wt_MUGS_rep3	wt	E18	males	UGS	rep3
+RNAseq_mm_E18_inv_FUGS_rep1	Inv	E18	females	UGS	rep1
+RNAseq_mm_E18_inv_FUGS_rep2	Inv	E18	females	UGS	rep2
+RNAseq_mm_E18_inv_FUGS_rep3	Inv	E18	females	UGS	rep3
+RNAseq_mm_E18_inv_MUGS_rep1	Inv	E18	males	UGS	rep1
+RNAseq_mm_E18_inv_MUGS_rep2	Inv	E18	males	UGS	rep2
+RNAseq_mm_E18_inv_MUGS_rep3	Inv	E18	males	UGS	rep3

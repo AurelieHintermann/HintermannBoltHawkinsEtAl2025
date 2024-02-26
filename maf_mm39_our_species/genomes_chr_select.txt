@@ -1,0 +1,9 @@
+mm39
+ornAna2 chrUn_DS181389v1 (liftOver of ornAna1:Ultra514 from mm10)
+galGal6 chr7
+anoCar2 chrUn_GL343356
+xenTro10 chr9
+latCha1 JH127184 (info from mm10)
+danRer11 chr9
+fr3 chr1
+petMar3

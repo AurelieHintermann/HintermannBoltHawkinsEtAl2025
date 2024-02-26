@@ -1,0 +1,2 @@
+CHiC_mm_E185_FUGS	CHiC_mm_E185_FUGS_R1.fastq.gz	CHiC_mm_E185_FUGS_R2.fastq.gz
+CHiC_mm_E185_MUGS	CHiC_mm_E185_MUGS_R1.fastq.gz	CHiC_mm_E185_MUGS_R2.fastq.gz

@@ -1,0 +1,8 @@
+# A tibble: 5 × 2
+  Genotype       Hoxd13_average_exp
+  <chr>                       <dbl>
+1 Del(Rel1-Rel5)            0.374  
+2 Del(Rel5-SB1)             0.00945
+3 Del(SB1-Atf2)             1.48   
+4 Del(nsi-Atf2)             0.159  
+5 wt                        1.01   

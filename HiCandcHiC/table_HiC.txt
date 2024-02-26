@@ -1,0 +1,10 @@
+Franke_48hpf_wt_rep1 SRR12435867
+Franke_48hpf_wt_rep2 SRR12435868
+Franke_24hpf_wt_rep1 SRR14670388
+Franke_24hpf_wt_rep2 SRR14670389
+Wike_24hpf_seq1 SRR12044304
+Wike_24hpf_seq2 SRR12044305
+Wike_24hpf_seq3 SRR12044306
+Wike_24hpf_seq4 SRR12044307
+Wike_24hpf_seq5 SRR12044308
+Wike_24hpf_seq6 SRR12044309

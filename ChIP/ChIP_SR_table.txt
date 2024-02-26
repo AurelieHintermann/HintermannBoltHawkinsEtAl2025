@@ -1,0 +1,4 @@
+ChIP_H3K27ac_mm_E185_FUGS_rep1	ChIP_H3K27ac_mm_E185_FUGS_rep1.fastq.gz
+ChIP_H3K27ac_mm_E185_MUGS_rep1	ChIP_H3K27ac_mm_E185_MUGS_rep1.fastq.gz
+ChIP_H3K27me3_mm_E185_MUGS_rep1	ChIP_H3K27me3_mm_E185_MUGS_rep1.fastq.gz
+CTCF_ChIP_mm_E105_PT_rep1	SRR17750150

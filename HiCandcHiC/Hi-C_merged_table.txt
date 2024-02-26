@@ -1,0 +1,1 @@
+HiC_hpf2448merge_WE_10kb.cool	Franke_24hpf_wt_rep1_raw.10kb.cool,Franke_24hpf_wt_rep2_raw.10kb.cool,Franke_48hpf_wt_rep1_raw.10kb.cool,Franke_48hpf_wt_rep2_raw.10kb.cool,Wike_24hpf_raw.10kb.cool
