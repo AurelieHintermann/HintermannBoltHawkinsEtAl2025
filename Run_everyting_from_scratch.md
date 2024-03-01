@@ -6,9 +6,8 @@ Clone the git repository
 
 ```bash
 cd /scratch/ldelisle/
-git clone git@gitlab.unige.ch:Aurelie.Hintermann/HintermannBoltEtAl2024.git
+git clone git@github.com:AurelieHintermann/HintermannBoltEtAl2024.git
 ```
-
 Create dirs to be able to put fastqs
 
 ```bash
