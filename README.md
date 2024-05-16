@@ -1,4 +1,4 @@
-# Bolt2023 Test
+# scripts for Hintermann, Bolt, et al., 2024
 
 All scripts necessary to build figures from raw data in Hintermann, Bolt et al 2023. 
 
