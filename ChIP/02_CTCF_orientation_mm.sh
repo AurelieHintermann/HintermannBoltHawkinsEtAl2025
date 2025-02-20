@@ -11,7 +11,7 @@ ChIP_CTCF_mm="${GEODirectory}/ChIP/CTCF_ChIP_mm_E105_PT_rep1.narrowPeak.gz"
 # Generate CTCF motif tables
 generateNewMotifPrediction_forMouse=yes
 
-condaEnvName=HintermannBoltEtAl2023
+condaEnvName=HintermannBoltHawkinsEtAl2025
 # This line is to adapt the conda to the shell
 source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
 # Activate the conda environment

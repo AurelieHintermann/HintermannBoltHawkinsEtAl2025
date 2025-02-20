@@ -9,7 +9,7 @@
 #SBATCH --time 24:00:00 # This depends on the size of the fastqs
 #SBATCH --array=1-10 # Put here the rows from the table that need to be processed in the table
 #SBATCH --job-name HiC_danRer # Job name that appear in squeue as well as in output and error text files
-#SBATCH --chdir /scratch/ldelisle/HintermannBolt/HiC/ # This directory must exist, this is where will be the error and out files
+#SBATCH --chdir /scratch/ldelisle/HintermannBoltHawkinsEtAl/HiC/ # This directory must exist, this is where will be the error and out files
 ## Specific to jed:
 #SBATCH --qos serial
 
@@ -126,7 +126,7 @@ filePathForSizesForBin="${filePathForFasta/.fa/_noUn.fa}.fai"
 # condaEnvName=pgt3.7
 # Alternatively you can use conda to solve all dependencies:
 # conda env create -f ${gitDir}/BoltEtAl2023.yml
-condaEnvName=HintermannBoltEtAl2023
+condaEnvName=HintermannBoltHawkinsEtAl2025
 
 
 ##################################

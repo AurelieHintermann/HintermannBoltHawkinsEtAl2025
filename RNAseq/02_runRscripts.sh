@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task 1 # This does not use multiple CPUs
 #SBATCH --time 02:00:00 # This depends on the number of samples
 #SBATCH --job-name RNAseq_R # Job name that appear in squeue as well as in output and error text files
-#SBATCH --chdir /scratch/ldelisle/HintermannBolt/RNAseq/ # This directory must exist, this is where will be the error and out files
+#SBATCH --chdir /scratch/ldelisle/HintermannBoltHawkinsEtAl/RNAseq/ # This directory must exist, this is where will be the error and out files
 
 # This script run Rscripts to merge counts and FPKM
 # Generate plots
@@ -53,7 +53,7 @@ chrsToRemove="chrX,chrY,chrM"
 
 # You can choose to use a conda environment to solve R and associated packages
 # conda env create -f ${gitDir}/BoltEtAl2023.yml
-condaEnvName=HintermannBoltEtAl2023
+condaEnvName=HintermannBoltHawkinsEtAl2025
 ######
 
 

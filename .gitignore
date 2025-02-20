@@ -12,6 +12,7 @@ scripts/in_silico_PCR.pl
 # Big files from single-cell
 scRNAseq/*rds
 scRNAseq/data
+scATACseq/data
 
 # Scripts from UCSC
 maf_mm39_our_species/scripts
@@ -22,3 +23,15 @@ RNAseq/outputs/AllCufflinks_Simplified.txt.gz
 # maf
 annotations/chr2.maf*
 annotations/mm39.galGal6.synNet.maf*
+sequence_alignments/cactus/**/*maf*
+
+# bw from scATAC
+plots/outputs/*bw
+
+# gtf from Lawson
+annotations/danRer11_Lawson_v4.3.2.gtf
+
+# Rstudio
+.Rproj.user
+*.Rproj
+

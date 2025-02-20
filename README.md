@@ -1,10 +1,10 @@
-# scripts for Hintermann, Bolt, et al., 2024
+# HintermannBoltHawkinsEtAl2025
 
-All scripts necessary to build figures from raw data in Hintermann, Bolt et al 2023. 
+All scripts necessary to build figures from raw data in Hintermann, Bolt, Hawkins et al 2025. 
 
 ## To reproduce the analysis
 
-Everything is described in detail in [this markdown](./Run_everyting_from_scratch.md).
+Everything is described in detail in [this markdown](./Run_everything_from_scratch.md).
 
 Here is a summary:
 

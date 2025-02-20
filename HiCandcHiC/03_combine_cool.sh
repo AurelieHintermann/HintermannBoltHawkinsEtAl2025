@@ -9,7 +9,7 @@
 #SBATCH --time 12:00:00 # This depends on the number of cool files
 #SBATCH --array=1-1 # Put here the rows from the table that need to be processed
 #SBATCH --job-name HiC_merge # Job name that appear in squeue as well as in output and error text files
-#SBATCH --chdir /scratch/ldelisle/HintermannBolt/HiC/ # This directory must exist, this is where will be the error and out files
+#SBATCH --chdir /scratch/ldelisle/HintermannBoltHawkinsEtAl/HiC/ # This directory must exist, this is where will be the error and out files
 #SBATCH --qos=serial
 
 gitDir=$1
@@ -51,7 +51,7 @@ filePathForTable="${gitDir}/HiCandcHiC/Hi-C_merged_table.txt"
 # condaEnvName=pgt3.7
 # Alternatively you can use conda to solve all dependencies:
 # conda env create -f ${gitDir}/BoltEtAl2023.yml
-condaEnvName=HintermannBoltEtAl2023
+condaEnvName=HintermannBoltHawkinsEtAl2025
 
 
 ##################################

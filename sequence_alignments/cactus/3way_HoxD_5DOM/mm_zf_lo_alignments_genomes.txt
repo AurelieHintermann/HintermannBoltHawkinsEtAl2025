@@ -1,0 +1,3 @@
+Mus_musculus	GCA_000001635.9_chr2
+Danio_rerio	GCA_000002035.4_HoxD5DOM
+Lepisosteus_oculatus	GCF_000242695.1_HoxD5DOM

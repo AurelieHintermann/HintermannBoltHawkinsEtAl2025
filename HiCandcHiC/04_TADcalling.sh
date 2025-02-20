@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task 1 # This only uses a single CPU
 #SBATCH --time 12:00:00 # This depends on the number of cool files
 #SBATCH --job-name TAD_calling # Job name that appear in squeue as well as in output and error text files
-#SBATCH --chdir /scratch/ldelisle/HintermannBolt/TAD_calling/ # This directory must exist, this is where will be the error and out files
+#SBATCH --chdir /scratch/ldelisle/HintermannBoltHawkinsEtAl/TAD_calling/ # This directory must exist, this is where will be the error and out files
 #SBATCH --qos=serial
 
 gitDir=$1
@@ -17,7 +17,7 @@ GEODirectory=$2
 # This script call TADs
 
 filePathForTADcallingOutput="${gitDir}/HiCandcHiC/TADcalling/"
-condaEnvName=HintermannBoltEtAl2023
+condaEnvName=HintermannBoltHawkinsEtAl2025
 # This line is to adapt the conda to the shell
 source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
 # Activate the conda environment

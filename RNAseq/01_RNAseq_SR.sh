@@ -9,7 +9,7 @@
 #SBATCH --time 04:00:00 # This depends on the size of the fastqs
 #SBATCH --array=1-12 # Put here the rows from the table that need to be processed in the table
 #SBATCH --job-name RNAseq # Job name that appear in squeue as well as in output and error text files
-#SBATCH --chdir /scratch/ldelisle/HintermannBolt/RNAseq/ # This directory must exist, this is where will be the error and out files
+#SBATCH --chdir /scratch/ldelisle/HintermannBoltHawkinsEtAl/RNAseq/ # This directory must exist, this is where will be the error and out files
 ## Specific to jed:
 #SBATCH --qos serial
 
@@ -70,8 +70,8 @@ filePathForFasta="${genomePath}/fasta/${genome}.fa"
 
 # You can choose to use a conda environment to solve cutadapt/star/samtools/cufflinks/bedtools/bedgraphtobigwig dependencies
 # conda env create -f ${gitDir}/BoltEtAl2023.yml
-condaEnvName=HintermannBoltEtAl2023
-condaCufflinks=HintermannBoltEtAl2023_cufflinks
+condaEnvName=HintermannBoltHawkinsEtAl2025
+condaCufflinks=HintermannBoltHawkinsEtAl2025_cufflinks
 ######
 
 

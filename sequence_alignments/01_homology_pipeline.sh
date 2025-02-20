@@ -15,7 +15,7 @@ pathToFasta="${genomeDirectory}/fasta/"
 
 cd $gitHubDirectory
 
-condaEnvName=HintermannBoltEtAl2023
+condaEnvName=HintermannBoltHawkinsEtAl2025
 # This line is to adapt the conda to the shell
 source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
 # Activate the conda environment

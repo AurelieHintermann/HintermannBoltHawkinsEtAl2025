@@ -1,0 +1,13 @@
+Mus musculus
+Ornithorhynchus anatinus
+Gallus gallus
+Anolis carolinensis
+Xenopus tropicalis
+Latimeria chalumnae
+Danio rerio
+Takifugu rubripes
+Petromyzon marinus
+Lepisosteus oculatus
+Scyliorhinus canicula
+Leucoraja erinacea
+Amia calva

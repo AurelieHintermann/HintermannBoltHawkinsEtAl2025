@@ -1,0 +1,13 @@
+Mus_musculus	GCA_000001635.9
+Ornithorhynchus_anatinus	GCA_000002275.2
+Gallus_gallus	GCA_000002315.5
+Anolis_carolinensis	GCA_000090745.2
+Xenopus_tropicalis	GCA_000004195.4
+Latimeria_chalumnae	GCA_000225785.1
+Danio_rerio	GCA_000002035.4
+Takifugu_rubripes	GCA_901000725.3
+Petromyzon_marinus	GCA_010993605.1
+Lepisosteus_oculatus	GCA_000242695.1
+Scyliorhinus_canicula	GCA_902713615.2
+Leucoraja_erinacea	GCA_028641065.1
+Amia_calva	GCA_036373705.1

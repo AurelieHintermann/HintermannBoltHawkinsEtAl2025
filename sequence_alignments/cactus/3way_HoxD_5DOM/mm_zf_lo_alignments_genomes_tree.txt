@@ -1,0 +1,4 @@
+((Danio_rerio,Mus_musculus),Lepisosteus_oculatus);
+Mus_musculus	/n/projects/ah2717/genomes/fasta/Mus_musculus_GCA_000001635.9_chr2.fna
+Danio_rerio	/n/projects/ah2717/genomes/fasta/Danio_rerio_GCA_000002035.4_HoxD5DOM.fna
+Lepisosteus_oculatus	/n/projects/ah2717/genomes/fasta/Lepisosteus_oculatus_GCF_000242695.1_HoxD5DOM.fna

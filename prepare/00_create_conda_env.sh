@@ -9,11 +9,11 @@ fi
 # This line is to adapt the conda to the shell
 source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
 
-conda create -y -n HintermannBoltEtAl2023 python=3.10.6 mamba
-conda activate HintermannBoltEtAl2023
-mamba install --yes -c conda-forge -c bioconda --file ${gitHubDirectory}/requirements_HintermannBoltEtAl2023.txt
+conda create -y -n HintermannBoltHawkinsEtAl2025 python=3.10.6 mamba
+conda activate HintermannBoltHawkinsEtAl2025
+mamba install --yes -c conda-forge -c bioconda --file ${gitHubDirectory}/HintermannBoltHawkinsEtAl2025.txt
 conda deactivate
-conda create -y -n HintermannBoltEtAl2023_cufflinks python=3.6 mamba
-conda activate HintermannBoltEtAl2023_cufflinks
-mamba install --yes -c conda-forge -c bioconda --file ${gitHubDirectory}/requirements_HintermannBoltEtAl2023_cufflinks.txt
+conda create -y -n HintermannBoltHawkinsEtAl2025_cufflinks python=3.6 mamba
+conda activate HintermannBoltHawkinsEtAl2025_cufflinks
+mamba install --yes -c conda-forge -c bioconda --file ${gitHubDirectory}/HintermannBoltHawkinsEtAl2025_cufflinks.txt
 conda deactivate

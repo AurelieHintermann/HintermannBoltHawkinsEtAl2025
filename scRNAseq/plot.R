@@ -348,10 +348,12 @@ if (!file.exists(paste0("scRNAseq/outputs/", sample, "_infos.txt"))) {
   )
   FeaturePlot(obj, features = hox13)
   Idents(obj) <- "clust"
+  # posMarkers.wilcox.cloaca <- FindMarkers(obj,"endo.31",assay.type='RNA',test.use="wilcox",only.pos=T, min.cells.group = 1)
   VlnPlot(obj, features = hox13)
   DotPlot(obj, features = hox13)
 
-  temp.df <- FetchData(obj, vars = c("UMAP_1", "UMAP_2", "clust", "stage.integer", "stage.group", hox13))
+  temp.df <- FetchData(obj, vars = c("UMAP_1", "UMAP_2", "sample", "clust", "stage.integer", "stage.group", hox13))
+  temp.df$cell <- rownames(temp.df)
 
   # Download the sup table 3
   target.directory <- "scRNAseq/data/"
@@ -364,6 +366,10 @@ if (!file.exists(paste0("scRNAseq/outputs/", sample, "_infos.txt"))) {
   cluster.naming <- read.xlsx(xlsxFile = file.path(target.directory, "mmc3.xlsx"))
 
   temp.df <- merge(temp.df, cluster.naming, by.x = "clust", by.y = "cluster", all.x = TRUE)
+
+  rownames(temp.df) <- temp.df$cell
+
+  temp.df$cell <- NULL
 
   write.table(temp.df, paste0("scRNAseq/outputs/", sample, "_infos.txt"), sep = "\t")
 } else {
@@ -555,4 +561,4 @@ ggarrange(
   heights = c(1.3, 1)
 )
 
-ggsave("scRNAseq/outputs/FigS10.pdf", width = 19, height = 25, units = "cm")
+ggsave("scRNAseq/outputs/FigS13.pdf", width = 19, height = 25, units = "cm")

@@ -1,2 +1,2 @@
-danRer11_noalt	/scratch/ldelisle/HintermannBolt/genomes/fasta/danRer11_noalt.fa
-mm39	/scratch/ldelisle/HintermannBolt/genomes/fasta/mm39.fa
+danRer11_noalt	/scratch/ldelisle/HintermannBoltHawkinsEtAl/genomes/fasta/danRer11_noalt.fa
+mm39	/scratch/ldelisle/HintermannBoltHawkinsEtAl/genomes/fasta/mm39.fa

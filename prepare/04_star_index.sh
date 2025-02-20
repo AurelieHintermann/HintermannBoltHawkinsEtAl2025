@@ -9,7 +9,7 @@
 #SBATCH --time 3:00:00 # This depends on the size of the fasta
 #SBATCH --array=2-2 # Put here the rows from the table that need to be processed in the table
 #SBATCH --job-name star_index # Job name that appear in squeue as well as in output and error text files
-#SBATCH --chdir /scratch/ldelisle/HintermannBolt/ # This directory must exists, this is where will be the error and out files
+#SBATCH --chdir /scratch/ldelisle/HintermannBoltHawkinsEtAl/ # This directory must exists, this is where will be the error and out files
 
 gitDir=$1
 genomeDirectory=$2
@@ -48,7 +48,7 @@ dirPathForSTARIndex="${genomeDirectory}/STARIndex_2.7.10a/__genome__"
 # export PATH=$PATH:/home/ldelisle/softwares/STAR-2.7.9a/bin/Linux_x86_64/
 # You can choose to use a conda environment to solve star dependencies
 # Comment it if you will use module load
-condaEnvName=HintermannBoltEtAl2023
+condaEnvName=HintermannBoltHawkinsEtAl2025
 
 ##################################
 ####### BEGINING OF SCRIPT #######

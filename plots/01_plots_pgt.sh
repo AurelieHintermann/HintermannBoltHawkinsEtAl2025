@@ -1,5 +1,5 @@
 #! /bin/bash
-# Using pygenometracks version 3.8 HintermannBoltEtAl2023
+# Using pygenometracks version 3.8 HintermannBoltHawkinsEtAl2025
 
 if [ $0 != "-bash" ]; then
     source $(dirname $0)/../filePaths.sh
@@ -7,7 +7,7 @@ else
     echo "Source the file 'filePaths.sh' in the github directory"
 fi
 
-condaEnvName=HintermannBoltEtAl2023
+condaEnvName=HintermannBoltHawkinsEtAl2025
 # This line is to adapt the conda to the shell
 source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
 # Activate the conda environment
@@ -21,6 +21,8 @@ pathWithCR="${GEODirectory}/CnR"
 pathWithATAC="${GEODirectory}/ATAC"
 pathWithChIP="${GEODirectory}/ChIP"
 pathWithMAF="${gitHubDirectory}/maf_mm39_our_species/maf_per_species"
+pathWithCactus3="${gitHubDirectory}/sequence_alignments/cactus/3way_HoxD_5DOM"
+pathWithCactus13="${gitHubDirectory}/sequence_alignments/cactus/13way"
 plottingDirectory="${gitHubDirectory}/plots/outputs"
 
 mkdir -p $plottingDirectory
@@ -1006,33 +1008,6 @@ echo -e "\n\n## Plotting ${ini_file/.ini/}"
 
 echo "# ${pGT_cmd}
 
-[spacer]
-height = 0.1
-
-[ATAC_danRer_16hpf_Head_rep1]
-file = ${pathWithATAC}/ATAC_danRer_16hpf_Head_rep1.bw
-title = ATAC 16hpf Head
-height = .88
-file_type = bigwig
-summary_method = max
-nans_to_zeros = true
-color = darkgrey
-
-[spacer]
-height = 0.1
-
-[ATAC_danRer_16hpf_PT_rep1]
-file = ${pathWithATAC}/ATAC_danRer_16hpf_PT_rep1.bw
-title = ATAC 16 hpf PT
-height = .88
-file_type = bigwig
-summary_method = max
-nans_to_zeros = true
-color = darkblue
-
-[spacer]
-height = 0.1
-
 [CnR_danRer_16hpf_PT_H3K27ac_rep1]
 file = ${pathWithCR}/CnR_H3K27ac_danRer_16hpf_PT_rep1.bw
 title = CUT&RUN H3K27ac 16 hpf PT
@@ -1411,10 +1386,6 @@ height = 0.2
 line_width = .1
 title = ${species[$i]}
 " >> $ini_file
-    if [ ! -e ${pathWithMAF}/mm39.chr2.${species[$i]}.maf ]; then
-        echo "skip = true
-" >> $ini_file
-    fi
 done
 
 echo -e "\n\n## Plotting ${ini_file/.ini/_CsB}"
@@ -1423,3 +1394,610 @@ echo -e "\n\n## Plotting ${ini_file/.ini/_islandE}"
 $pGT_cmd2
 echo -e "\n\n## Plotting ${ini_file/.ini/_GT2}"
 $pGT_cmd3
+
+# Figure S10a
+ini_file=${plottingDirectory}/FigS10a.ini
+pGT_cmd="pyGenomeTracks --tracks ${ini_file} -o  ${ini_file/.ini/.png} --region chr9:1900000-2400000 --dpi 300 --decreasingXAxis --trackLabelFraction .3 --fontSize 7 --plotWidth 16.7"
+
+echo "# ${pGT_cmd}
+
+[spacer]
+height = 0.1
+
+[maf]
+file = ${pathWithCactus13}/vertebrates_13way_projected_Dr_chr9.maf
+height = 5
+reference = Danio_rerio
+color_identical = black
+color_mismatch = grey
+color_gap = white
+species_order = Danio_rerio Takifugu_rubripes Amia_calva Lepisosteus_oculatus Mus_musculus Ornithorhynchus_anatinus Gallus_gallus Anolis_carolinensis Xenopus_tropicalis Latimeria_chalumnae Scyliorhinus_canicula Leucoraja_erinacea Petromyzon_marinus
+species_labels = zebrafish fugu bowfin gar mouse platypus chicken lizard frog coelacanth catshark skate lamprey
+line_width = .1
+title = whole genome alignments
+
+[spacer]
+height = 0.3
+
+[hline]
+color = black
+line_width = .3
+min_value = 0
+max_value = 1
+file_type = hlines
+y_values = .5
+height = 0.2
+
+[genes]
+file = ${pathWithAnnotations}/danRer11_hoxDa_custom_postax.bed
+file_type = bed
+display = collapsed
+color = black
+color = black
+border_color = none
+labels = false
+height = 0.2
+line_width = .5
+overlay_previous = share-y
+
+[features labels]
+file = ${pathWithAnnotations}/danRer11_hoxDa_custom_protein_coding_HoxDblack_start.bed
+display = interleaved
+color = none
+line_width = 0
+labels = true
+fontsize = 7
+
+[elements]
+file = ${pathWithAnnotations}/danRer11_hoxDa_elements.bed
+display = collapsed
+color = bed_rgb
+border_color = bed_rgb
+height = 0.15
+labels = false
+
+[elements labels]
+file = ${pathWithAnnotations}/danRer11_hoxDa_elements.bed
+display = collapsed
+color = none
+line_width = 0
+labels = true
+fontsize = 5
+
+[spacer]
+height = 0.3
+
+[spacer]
+height = 0.05
+
+[5DOM]
+file = ${pathWithAnnotations}/danRer11_hoxDa_5DOM.bed
+display = collapsed
+color = bed_rgb
+border_color = none
+height = .08
+fontsize = 7
+
+[spacer]
+height = 0.2
+
+[x-axis]
+fontsize = 6
+" > ${ini_file}
+$pGT_cmd
+
+# Figure S10b
+ini_file=${plottingDirectory}/FigS10b.ini
+pGT_cmd="pyGenomeTracks --tracks ${ini_file} -o  ${ini_file/.ini/.png} --region chr2:73640000-74630000 --dpi 300 --trackLabelFraction 0.3 --fontSize 7 --plotWidth 16.7"
+
+echo "# ${pGT_cmd}
+
+[x-axis]
+fontsize = 6
+
+[spacer]
+height = 0.1
+
+[5DOM]
+file = ${pathWithAnnotations}/mm39_HoxD_5DOM.bed
+display = collapsed
+color = bed_rgb
+border_color = none
+height = .08
+fontsize = 7
+
+[spacer]
+height = 0.1
+
+[hline]
+color = black
+line_width = .5
+min_value = 0
+max_value = 1
+file_type = hlines
+y_values = .5
+height = 0.2
+
+[genes]
+file = ${pathWithAnnotations}/mm39_HoxD_custom_protein_coding.bed
+file_type = bed
+display = collapsed
+color = bed_rgb
+border_color = none
+labels = false
+height = 0.2
+line_width = 1
+overlay_previous = share-y
+
+[features labels]
+file = ${pathWithAnnotations}/mm39_HoxD_custom_protein_coding_HoxDblack_start.bed
+display = interleaved
+color = none
+line_width = 0
+labels = true
+fontsize = 7
+[spacer]
+height = 0.1
+
+[elements]
+file = ${pathWithAnnotations}/mm39_HoxD_elements.bed
+display = interleaved
+color = bed_rgb
+border_color = bed_rgb
+height = 0.3
+labels = true
+fontsize = 5
+
+[spacer]
+height = 0.1
+
+[maf]
+file = ${pathWithCactus13}/vertebrates_13way_projected_Mm_chr2.maf
+height = 5
+reference = Mus_musculus
+color_identical = black
+color_mismatch = grey
+color_gap = white
+species_order = Mus_musculus Ornithorhynchus_anatinus Gallus_gallus Anolis_carolinensis Xenopus_tropicalis Latimeria_chalumnae Danio_rerio Takifugu_rubripes Amia_calva Lepisosteus_oculatus Scyliorhinus_canicula Leucoraja_erinacea Petromyzon_marinus
+species_labels = mouse platypus chicken lizard frog coelacanth zebrafish fugu bowfin gar catshark skate lamprey
+line_width = .1
+title = whole genome alignments
+"> $ini_file
+$pGT_cmd
+
+# Figure S10c
+ini_file=${plottingDirectory}/FigS10c.ini
+pGT_cmd="pyGenomeTracks --tracks ${ini_file} -o  ${ini_file/.ini/.png} --region chr2:73640000-74630000 --dpi 300 --trackLabelFraction 0.3 --fontSize 7 --plotWidth 16.7"
+
+echo "# ${pGT_cmd}
+
+[x-axis]
+fontsize = 6
+
+[spacer]
+height = 0.1
+
+[5DOM]
+file = ${pathWithAnnotations}/mm39_HoxD_5DOM.bed
+display = collapsed
+color = bed_rgb
+border_color = none
+height = .08
+fontsize = 7
+
+[spacer]
+height = 0.1
+
+[hline]
+color = black
+line_width = .5
+min_value = 0
+max_value = 1
+file_type = hlines
+y_values = .5
+height = 0.2
+
+[genes]
+file = ${pathWithAnnotations}/mm39_HoxD_custom_protein_coding.bed
+file_type = bed
+display = collapsed
+color = bed_rgb
+border_color = none
+labels = false
+height = 0.2
+line_width = 1
+overlay_previous = share-y
+
+[features labels]
+file = ${pathWithAnnotations}/mm39_HoxD_custom_protein_coding_HoxDblack_start.bed
+display = interleaved
+color = none
+line_width = 0
+labels = true
+fontsize = 7
+
+[spacer]
+height = 0.1
+
+[elements]
+file = ${pathWithAnnotations}/mm39_HoxD_elements.bed
+display = interleaved
+color = bed_rgb
+border_color = bed_rgb
+height = 0.3
+labels = true
+fontsize = 5
+
+[spacer]
+height = 0.1
+
+[maf]
+file = ${pathWithCactus3}/mm_zf_lo_projected_Mm.maf
+height = 2
+reference = Mus_musculus
+line_width = 2.5
+color_identical = black
+color_mismatch = grey
+color_gap = white
+species_order = Mus_musculus Danio_rerio Lepisosteus_oculatus
+species_labels = mouse zebrafish gar
+title = HoxD 5DOM alignment
+"> $ini_file
+$pGT_cmd
+
+# Compare pectoral fin and tailbud mesoderm
+wget "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE243256&format=file&file=GSE243256%5Fhpf24%5FTailbud%5Fmesoderm%2Ebw" -nc -O "GSE243256_hpf24_Tailbud_mesoderm.bw" 
+wget "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE243256&format=file&file=GSE243256%5Fhpf72%5FPectoral%5Ffin%5Ffield%2Ebw" -nc -O "GSE243256_hpf72_Pectoral_fin_field.bw"
+wget "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE243256&format=file&file=GSE243256%5Fhpf48%5FPectoral%5Ffin%5Ffield%2Ebw" -nc -O "GSE243256_hpf48_Pectoral_fin_field.bw"
+
+# Figure S11
+ini_file=${plottingDirectory}/FigS11.ini
+pGT_cmd="pyGenomeTracks --tracks ${ini_file} -o  ${ini_file/.ini/.pdf} --region chr9:1900000-2400000 --dpi 150 --decreasingXAxis --trackLabelFraction .25 --fontSize 7 --plotWidth 12.3"
+
+echo "# ${pGT_cmd}
+
+[x-axis]
+fontsize = 7
+
+[highlight names]
+file = ${pathWithAnnotations}/danRer11_hoxDa_highlight_peaks.bed
+color = none
+height = 1.5
+fontsize = 7
+
+[spacer]
+height = 0.1
+
+[ATAC_danRer_30hpf_Head_rep1]
+file = ${pathWithATAC}/ATAC_danRer_30hpf_Head_rep1.bw
+title = ATAC Head 30hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = darkgrey
+min_value = 0 
+
+[spacer]
+height = 0.1
+
+[ATAC_danRer_30hpf_Cloaca_rep1]
+file = ${pathWithATAC}/ATAC_danRer_30hpf_Cloaca_rep1.bw
+title = ATAC Cloaca 30hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = brown
+min_value = 0 
+
+[spacer]
+height = 0.1
+
+[ATAC_danRer_30hpf_TailBud_rep1]
+file = ${pathWithATAC}/ATAC_danRer_30hpf_TailBud_rep1.bw
+title = ATAC TailBud 30hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = darkblue
+min_value = 0 
+
+[spacer]
+height = 0.1
+
+[hpf24_Tailbud_mesoderm]
+file = GSE243256_hpf24_Tailbud_mesoderm.bw
+title = scATAC Tailbud mesoderm 24hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = blue
+min_value = 0 
+
+[spacer]
+height = 0.1
+
+[scATAC_14hpf_endo.31]
+file = ${gitHubDirectory}/scATACseq/hpf14/ArchROutput/GroupBigWigs/identity.super/cloaca-TileSize-100-normMethod-ReadsInTSS-ArchR.bw
+title = scATAC Predicted cloaca 14hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = black
+min_value = 0 
+
+[spacer]
+height = 0.1
+
+[hpf48_Pectoral_fin_field]
+file = GSE243256_hpf48_Pectoral_fin_field.bw
+title = scATAC Pectoral fin 48hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = green
+
+[spacer]
+height = 0.1
+
+[hpf72_Pectoral_fin_field]
+file = GSE243256_hpf72_Pectoral_fin_field.bw
+title = scATAC Pectoral fin 72hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = green
+min_value = 0 
+
+[spacer]
+height = 0.1
+
+[maf mouse]
+file = ${gitHubDirectory}/maf_mm39_our_species/maf_per_species/mm39.chr2.danRer11.maf
+file_index = ${gitHubDirectory}/maf_mm39_our_species/maf_per_species/mm39.chr2.danRer11.maf.indexDanRer
+title = conservation with mouse
+height = 0.2
+reference = danRer11
+color_identical = black
+color_mismatch = grey
+color_gap = lightgrey
+line_width = .5
+rasterize = true
+
+[spacer]
+height = 0.1
+
+[hline]
+color = black
+line_width = .3
+min_value = 0
+max_value = 1
+file_type = hlines
+y_values = .5
+height = 0.2
+show_data_range = false
+
+[genes]
+file = ${pathWithAnnotations}/danRer11_hoxDa_custom_postax.bed
+file_type = bed
+display = collapsed
+color = black
+color = black
+border_color = none
+labels = false
+height = 0.2
+line_width = .5
+overlay_previous = share-y
+
+[features labels]
+file = ${pathWithAnnotations}/danRer11_hoxDa_custom_protein_coding_HoxDblack_start.bed
+display = interleaved
+color = none
+line_width = 0
+labels = true
+fontsize = 5
+
+[elements]
+file = ${pathWithAnnotations}/danRer11_hoxDa_elements.bed
+display = collapsed
+color = bed_rgb
+border_color = bed_rgb
+height = 0.15
+labels = false
+
+[elements labels]
+file = ${pathWithAnnotations}/danRer11_hoxDa_elements.bed
+display = collapsed
+color = none
+line_width = 0
+labels = true
+fontsize = 5
+
+[spacer]
+height = 0.05
+
+[5DOM]
+file = ${pathWithAnnotations}/danRer11_hoxDa_5DOM.bed
+display = collapsed
+color = bed_rgb
+border_color = none
+height = .08
+fontsize = 7
+
+[spacer]
+height = 0.1
+
+[del5DOM]
+file = ${pathWithAnnotations}/danRer11_hoxDa_del5DOM.bed
+display = collapsed
+color = red
+border_color = none
+height = .1
+fontsize = 7
+
+[vhighlight]
+file = ${pathWithAnnotations}/danRer11_hoxDa_highlight_peaks.bed
+type = vhighlight
+" > $ini_file
+$pGT_cmd
+
+# Figure S12a
+ini_file=${plottingDirectory}/FigS12a.ini
+pGT_cmd="pyGenomeTracks --tracks ${ini_file} -o  ${ini_file/.ini/.pdf} --region chr9:2068000-2080000 --dpi 150 --decreasingXAxis --trackLabelFraction .25 --fontSize 7 --plotWidth 12.3"
+
+echo "# ${pGT_cmd}
+
+[x-axis]
+fontsize = 7
+
+[spacer]
+height = 0.1
+
+[ATAC_danRer_30hpf_Head_rep1]
+file = ${pathWithATAC}/ATAC_danRer_30hpf_Head_rep1.bw
+title = ATAC Head 30hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = darkgrey
+min_value = 0 
+
+[spacer]
+height = 0.1
+
+[ATAC_danRer_30hpf_Cloaca_rep1]
+file = ${pathWithATAC}/ATAC_danRer_30hpf_Cloaca_rep1.bw
+title = ATAC Cloaca 30hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = brown
+min_value = 0 
+
+[spacer]
+height = 0.1
+
+[ATAC_danRer_30hpf_TailBud_rep1]
+file = ${pathWithATAC}/ATAC_danRer_30hpf_TailBud_rep1.bw
+title = ATAC TailBud 30hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = darkblue
+min_value = 0 
+
+[spacer]
+height = 0.1
+
+[hpf24_Tailbud_mesoderm]
+file = GSE243256_hpf24_Tailbud_mesoderm.bw
+title = scATAC Tailbud mesoderm 24hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = blue
+min_value = 0 
+
+[spacer]
+height = 0.1
+
+[scATAC_14hpf_endo.31]
+file = ${gitHubDirectory}/scATACseq/hpf14/ArchROutput/GroupBigWigs/identity.super/cloaca-TileSize-100-normMethod-ReadsInTSS-ArchR.bw
+title = scATACseq predicted cloaca 14hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = black
+min_value = 0 
+
+[spacer]
+height = 0.1
+
+[hpf48_Pectoral_fin_field]
+file = GSE243256_hpf48_Pectoral_fin_field.bw
+title = scATAC Pectoral fin 48hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = green
+
+[spacer]
+height = 0.1
+
+[hpf72_Pectoral_fin_field]
+file = GSE243256_hpf72_Pectoral_fin_field.bw
+title = scATAC Pectoral fin 72hpf
+height = .88
+file_type = bigwig
+summary_method = max
+nans_to_zeros = true
+color = green
+min_value = 0 
+
+[spacer]
+height = 0.1
+
+[spacer]
+height = 0.6
+
+[maf]
+file = ${gitHubDirectory}/maf_mm39_our_species/maf_per_species/mm39.chr2.danRer11.maf
+height = 0.5
+reference = danRer11
+color_identical = black
+color_mismatch = grey
+color_gap = white
+file_index = ${gitHubDirectory}/maf_mm39_our_species/maf_per_species/mm39.chr2.danRer11.maf.danRer.index
+#species_order = Mus_musculus Danio_rerio
+#species_labels = mouse zebrafish
+line_width = .1
+title = conservation
+
+[spacer]
+height = 0.3
+
+[hline]
+color = black
+line_width = .3
+min_value = 0
+max_value = 1
+file_type = hlines
+y_values = .5
+height = 0.2
+
+[elements]
+file = ${pathWithAnnotations}/danRer11_hoxDa_elements.bed
+display = collapsed
+color = bed_rgb
+border_color = bed_rgb
+height = 0.25
+labels = true
+title = liftOver
+fontsize = 5
+overlay_previous = share-y
+
+[spacer]
+height = 0.1
+
+[dels]
+file = ${pathWithAnnotations}/danRer11_delCsB.bed
+title = CsB_guides
+height = .3
+color = red
+border_color = red
+fontsize = 7
+display = collapsed
+" > $ini_file
+$pGT_cmd
