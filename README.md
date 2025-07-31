@@ -31,7 +31,7 @@ The script in [plots](./plots) uses pyGenomeTracks to generate final figures wit
 
 ### Other analysis
 
-Other analyses does not rely on fastqs: [sequence_alignments](./sequence_alignments/), [RTqPCR](./RTqPCR/), [scRNAseq](./scRNAseq/) and [cloaca_measures](./cloaca_measures/)
+Other analyses does not rely on fastqs: [sequence_alignments](./sequence_alignments/), [RTqPCR](./RTqPCR/), [scRNAseq](./scRNAseq/), [cloaca_measures](./cloaca_measures/) and [fluo_quantification](./fluo_quantification).
 
 ## Finally
 

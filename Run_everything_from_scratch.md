@@ -263,6 +263,15 @@ Here again the R script [cloaca_measures_plot.R](./cloaca_measures/cloaca_measur
 Rscript cloaca_measures/cloaca_measures_plot.R
 ```
 
+### Fluo quantification
+
+Same here.
+```bash
+# Outside of conda environment:
+Rscript fluo_quantification/csb_reporter.R
+Rscript fluo_quantification/hcr_plot.R
+```
+
 ### scATAC-seq
 
 The idea is to use public scATAC and public scRNAseq where the Cloaca cells have been annotated to get a pseudo-bulk ATAC-seq profile of Cloaca.
